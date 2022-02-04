@@ -1,0 +1,7 @@
+Standar API
+{
+    root.api
+} / version /
+Auth
+1. Login
+2. Register

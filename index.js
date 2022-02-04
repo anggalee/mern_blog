@@ -3,7 +3,9 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser')
 const PORT = 5000;
-const productRoutes = require('./src/routes/product')
+
+const authRoutes = require('./src/routes/auth')
+const blogRoutes = require('./src/routes/blogs')
 
 app.use(bodyParser.json())
 
@@ -18,7 +20,8 @@ app.use((req, res, next) => {
 
 //Error CORS ORIGIN on BROWSER//
 
-app.use('/', productRoutes)
+app.use('/v1/auth', authRoutes);
+app.use('/v1/blog', blogRoutes)
 
 app.listen(PORT, () => {
     console.log(`Server is active on http://localhost:${PORT}`);
